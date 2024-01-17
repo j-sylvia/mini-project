@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz App</title>
+</head>
+<body>
+    <div class="container">
+        
+            <h1 style="font-family: Georgia, 'Times New Roman', Times, serif; background-color: rgb(127, 191, 255);
+            padding: 20px; margin: 0;">Online Assessment</h1>
+         <div class="instruct">
+            <h2 style="text-align: center;color: rgb(0, 126, 253);">Instructions</h2>
+            <blockquote><i class="fa fa-check-circle"></i> Try to answer the questions within the time limit. </blockquote>
+            <blockquote><i class="fa fa-check-circle"></i> You'll get points on the basis of your correct answers.</blockquote>
+         </div>
+            <button id="startquiz" onclick="timerQuiz()">START QUIZ</button>
+            
+            <div id="quiz" style="display: none;">
+
+                <h3 id="timer"></h3>
+
+        <div class="quiz-section">
+            <h2 id="question">1. What does HTML stand for?</h2>
+            <ul>
+                <li class="q1">
+                    <input type="radio" name="answer1" id="1a">
+                    <label for="1a">Hypertext Machine Language</label>
+                </li>
+                <li class="q1">
+                    <input type="radio" name="answer1" id="correct1">
+                    <label for="correct1">HyperText Markup Language</label>
+                </li>
+                <li class="q1">
+                    <input type="radio" name="answer1" id="1c">
+                    <label for="1c">Hypertext Markdown Language</label>
+                </li>
+                <li class="q1">
+                    <input type="radio" name="answer1" id="1d">
+                    <label for="1d">Hyperloop Machine Language</label>
+                </li>
+            </ul>
+            </div>
+                <hr>
+
+                <div class="quiz-section">
+            <h2 id="question">2. What does CSS stand for?</h2>
+            <ul>
+                <li class="q2">
+                    <input type="radio" name="answer2" id="correct2">
+                    <label for="correct2">Cascading Style Sheets</label>
+                </li>
+                <li class="q2">
+                    <input type="radio" name="answer2" id="2b">
+                    <label for="2b">Cascading Simple Sheets</label>
+                </li>
+                <li class="q2">
+                    <input type="radio" name="answer2" id="2c">
+                    <label for="2c">Cascading SUVs Sheets</label>
+                </li>
+                <li class="q2">
+                    <input type="radio" name="answer2" id="2d">
+                    <label for="2d">Cascading Sheets Style</label>
+                </li>
+            </ul>
+            </div>
+            <hr>
+
+            <div class="quiz-section">
+            <h2 id="question">3. Who is making the Web standards?</h2>
+            <ul>
+                <li class="q3">
+                    <input type="radio" name="answer3" id="3a">
+                    <label for="3a">Google</label>
+                </li>
+                <li class="q3">
+                    <input type="radio" name="answer3" id="3b">
+                    <label for="3b">Mozilla</label>
+                </li>
+                <li class="q3">
+                    <input type="radio" name="answer3" id="correct3">
+                    <label for="correct3">The World Wide Web Consortium</label>
+                </li>
+                <li class="q3">
+                    <input type="radio" name="answer3" id="3d">
+                    <label for="3d">Microsoft</label>
+                </li>
+            </ul>
+            </div>
+            <hr>
+
+            <div class="quiz-section">
+            <h2 id="question">4. Which property is used to change the font of an element?</h2>
+            <ul>
+                <li class="q4">
+                    <input type="radio" name="answer4" id="4a">
+                    <label for="4a">font-size</label>
+                </li>
+                <li class="q4">
+                    <input type="radio" name="answer4" id="correct4">
+                    <label for="correct4">font-family</label>
+                </li>
+                <li class="q4">
+                    <input type="radio" name="answer4" id="4c">
+                    <label for="4c">font-style</label>
+                </li>
+                <li class="q4">
+                    <input type="radio" name="answer4" id="4d">
+                    <label for="4d">text-family</label>
+                </li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="quiz-section">
+            <h2 id="question">5. Which HTML attribute is used to define inline styles?</h2>
+            <ul>
+                <li class="q5">
+                    <input type="radio" name="answer5" id="5a">
+                    <label for="5a">class</label>
+                </li>
+                <li class="q5">
+                    <input type="radio" name="answer5" id="5b">
+                    <label for="5b">src</label>
+                </li>
+                <li class="q5">
+                    <input type="radio" name="answer5" id="5c">
+                    <label for="5c">href</label>
+                </li>
+                <li class="q5">
+                    <input type="radio" name="answer5" id="correct5">
+                    <label for="correct5">style</label>
+                </li>
+            </ul>
+        </div>
+        
+        <button id="submit" onclick="result()">SUBMIT QUIZ</button>
+        <button id="submit1" onclick="result()" style="display: none;">SUBMIT QUIZ</button>
+
+    </div>
+</div>
+    
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $("li").click(function(){
+        $('.'+this.className).css('background-color','#fff')
+        $(this).find("input").prop("checked", true);
+        $(this).css("background-color","#6bd599");
+    });
+
+    $("#startquiz").click(function(){
+        $('#quiz').show();
+        $('#startquiz').hide();
+        $('.instruct').hide();
+    });
+
+    $("#submit1").click(function(){
+        $('#quiz').prepend(`<h1 style="background-color:red;padding:10px;width:180px;margin:40px auto 0">TIME'S UP</h1>`);
+    });
+   
+});
+
+</script>
+
+</body>
+</html>

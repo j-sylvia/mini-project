@@ -1,0 +1,78 @@
+body{
+    background: linear-gradient(to right, rgba(253, 117, 117, 0.5), rgba(131, 131, 241, 0.5));
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+input{
+    cursor: pointer;
+}
+.container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(100, 100, 100, 0.1);
+    margin: 30px 0;
+}
+#timer{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    margin-left: 1100px;
+    background-color: rgba(253, 117, 117, 0.5);
+    padding: 12px;
+    border-radius: 5px;
+    color: white;
+    position: fixed;
+}
+.instruct{
+    margin: 50px 30px;
+}
+ul{
+    padding: 0;
+}
+ul li{
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 15px;
+    border: 2px solid rgb(78, 77, 77);
+    cursor: pointer;
+}
+h1{
+    padding: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+ul li label{
+    cursor: pointer;
+}
+ul li:hover{
+    border: 2px solid blue;
+    color: blue;
+}
+.quiz-section{
+    padding: 20px 120px;
+}
+
+button:hover{
+    background-color: #6bd599;
+}
+
+button{
+    background-color: rgb(44, 147, 250);
+    color: #fff;
+    box-shadow: 10px 5px 15px rgb(191, 190, 190);
+    display: block;
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 1.2rem;
+    margin: 10px auto 50px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    border: 2px solid rgb(141, 141, 192);
+}
+i{
+    color: rgb(44, 147, 250);
+}
